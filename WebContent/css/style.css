@@ -1,0 +1,41 @@
+/* 
+    Document   : style
+    Created on : 2012-8-22, 12:49:50
+    Author     : Icer
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+
+}
+body{
+    background: #ffc repeat-y center;
+}
+#container {
+    background: #ffc url(mid.jpg) repeat-y center;
+    margin-left:10px;
+    margin-top: 10px;
+}
+
+a{
+    color:green;
+    text-decoration:none;
+    margin-top: 2px;
+}
+ul a{
+    color:green;
+    text-decoration:none;
+    margin-top: 2px;
+}
+#tips{
+    color: green;
+    font-size: 10px;
+}
+li{
+    color: green;
+    font-size: 10px;
+}
+
+

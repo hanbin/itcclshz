@@ -1,0 +1,85 @@
+<!--
+    注册页面
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>注册页面</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="type/css" href="css/style.css" />
+        <script>
+            function validate_email(field,alerttxt)
+            {
+                with (field)
+                {
+                    apos=value.indexOf("@")
+                    dotpos=value.lastIndexOf(".")
+                    if (apos<1||dotpos-apos<2) 
+                    {alert(alerttxt);return false}
+                    else {return true}
+                }
+            }
+            function validate_required(field,alerttxt)
+            {
+                with (field)
+                {
+                    if (value==null||value=="")
+                    {alert(alerttxt);return false}
+                    else {return true}
+                }
+            }
+
+            function validate_form(thisform)
+            {
+                with (thisform)
+                {
+                    if (validate_required(username,"用户名不可以为空")==false)
+                    {username.focus();return false}
+                    if (validate_required(email,"邮箱地址不可为空")==false)
+                    {email.focus();return false}
+                    if (validate_email(email,"不是一个有效的EMAIL地址")==false)
+                    {email.focus();return false}
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div>填写注册信息</div>
+            <form action="./Reg" method="post" onsubmit="return validate_form(this)">
+                <table border="0">
+                    <tr>
+                        <td>帐号：</td>
+                        <td>
+                            <input type="text" name="username" required="required" id="username" maxlength="10" size="20">*
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>邮箱：</td>
+                        <td>
+                            <input type="email" name="email" required="required" id="email" size="20">*
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交注册信息">
+                        </td>
+                        <td>
+                            <a href="login.html">已有帐号，返回登录</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <ul>
+                <li>邮箱地址请务必填写准确，本邮箱将是您注册帐号的唯一凭据</li>
+                <li>注册成功后，密码将会以邮件方式发送到您的邮箱，请及时查收，并尽快修改密码 </li>
+                <li>请尽量使用腾讯，新浪，Gamil邮箱，网易邮箱可能会出现收不到邮件的情况，或者请查看垃圾邮件</li>
+                <li>如果有任何问题请联系<a href="mailto:313949302@qq.com"><span style="color:blue;font-size:14px;">Icer</span></a></li>
+            </ul>
+        </div>
+        <p>
+            <a href="http://sae.sina.com.cn" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/120X33_transparent.gif" title="Powered by Sina App Engine"></a>
+            <span style="color:blue;font-size: 10px;"> <a href="http://itcaicai.com" target="_blank">IT菜菜</a>提供技术支持</span>
+        </p>
+    </body>
+</html>
