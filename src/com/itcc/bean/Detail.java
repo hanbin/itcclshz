@@ -10,7 +10,7 @@ import java.sql.Date;
  * @author Icer
  */
 public class Detail {
-    private int id;
+    private int id; 
     private String item;
     private double money;
     private Date date;
